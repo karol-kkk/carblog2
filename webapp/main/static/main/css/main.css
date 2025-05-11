@@ -1,0 +1,142 @@
+/*body {*/
+/*    background: #2c2c2c;*/
+/*}*/
+
+/*aside {*/
+/*    float: left;*/
+/*    background: #181818;*/
+/*    width: 20%;*/
+/*    padding: 2.5%;*/
+/*    height: 100vh;*/
+/*    color: #fff;*/
+/*    border-right: 5px solid #4d4d4d*/
+/*}*/
+
+/*aside img {*/
+/*    width: 80px;*/
+/*    float: left;*/
+
+/*}*/
+
+/*aside .logo {*/
+/*    font-size: 40px;*/
+/*    margin-left: 10px;*/
+/*    font-weight: bold;*/
+/*    position: relative;*/
+/*    top: -5px;*/
+/*}*/
+
+/*aside h3 {*/
+/*    margin-top: 50px;*/
+/*    font-size: 28px;*/
+/*}*/
+
+/*aside ul {*/
+/*    list-style: none;*/
+/*}*/
+
+/*aside ul li {*/
+/*    color: #fff;*/
+/*    display: block;*/
+/*    margin-top: 20px;*/
+/*    transition: transform .6s ease;*/
+/*}*/
+
+/*aside ul li:hover, aside ul a:hover {*/
+/*    color: #eb5959;*/
+/*    text-decoration: none;*/
+/*    transform: scale(1.05);*/
+/*}*/
+
+/*main .features {*/
+/*    float: left;*/
+/*    color: #fff;*/
+/*    margin-top: 100px;*/
+/*    text-align: center;*/
+/*    width: 75%;*/
+/*}*/
+
+/*main .features h1 {*/
+/*    font-size: 50px;*/
+/*}*/
+
+/*main .features p {*/
+/*    max-width: 400px;*/
+/*    margin: 20px auto;*/
+/*}*/
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+ 
+ .gradient {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+} 
+
+.form-group small,
+.form-text,
+.invalid-feedback
+{
+    color: #ffffff !important;
+}
+
+
+.hero_news {
+  position: relative;
+  background-image: url('/static/main/img/28606073562_ebdb9a45dc_k.jpg');
+  height: 200px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero_news::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.hero-text {
+  color: white;
+  font-size: 6rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.hero_post {
+  position: relative;
+  background-image: url('/static/main/img/21301605196_915045de2e_k.jpg');
+  height: 200px;
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero_post::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}

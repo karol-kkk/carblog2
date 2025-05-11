@@ -1,0 +1,14 @@
+{% extends 'main/layout/layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title%}Upload or update your avatar{% endblock %}
+
+{% block content %}
+    <div class="p-5">
+        <form method="post" enctype="multipart/form-data" class="form d-flex flex-column gap-2">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button class="btn gradient text-white" type="submit">Upload avatar</button>
+        </form>
+    </div>
+{% endblock %}
