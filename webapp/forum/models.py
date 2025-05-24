@@ -10,6 +10,10 @@ class Posts(models.Model):
     body = models.TextField('Post body', null=False, blank=True)
     published_at = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    likes = models.ManyToManyField(User, related_name='liked_posts', blank=True)
+
+    def total_likes(self):
+        return self.likes.count()
 
     def get_absolute_url(self):
         return f'/forum/{self.id}'

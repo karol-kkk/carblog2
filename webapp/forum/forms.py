@@ -22,11 +22,15 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ['body']
-    
-    body = forms.CharField(widget=forms.Textarea(attrs={
-        'rows': 2,  # This controls the height of the textarea (number of lines)
-        'cols': 40  # This controls the width of the textarea (number of characters)
-    }))
+        labels = {
+            'body': '', 
+        }
+        widgets = {
+            'body': Textarea(attrs={
+                'rows': 2,
+                'cols': 40
+            })
+        }
 
 
 PostImageFormSet = inlineformset_factory(Posts, PostImage, fields=['image', 'description'], extra=1, can_delete=True)

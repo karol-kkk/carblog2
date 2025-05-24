@@ -126,3 +126,12 @@ def delete_comment(request, comment_id):
                 comment.delete()
 
     return redirect('post_show', pk=comment.post.pk)
+
+@login_required
+def like_post(request, pk):
+    post = get_object_or_404(Posts, pk=pk)
+    if request.user in post.likes.all():
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user)
+    return redirect('post_show', pk=post.pk)
