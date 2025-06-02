@@ -8,6 +8,38 @@
     FAQ
   </div>
 </section>
-
-<h1>No questions for now</h1>
+{% if faqs %}
+<div class="container my-5">
+  <div class="accordion" id="faqAccordion">
+    {% for faq in faqs %}
+      <div class="accordion-item gradient text-white mb-3">
+        <h2 class="accordion-header" id="faqHeading{{ forloop.counter }}">
+          <button class="accordion-button gradient text-white {% if not forloop.first %}collapsed{% endif %}" 
+                  type="button" 
+                  data-bs-toggle="collapse" 
+                  data-bs-target="#faqCollapse{{ forloop.counter }}" 
+                  aria-expanded="{{ forloop.first|yesno:'true,false' }}" 
+                  aria-controls="faqCollapse{{ forloop.counter }}">
+            {{ faq.question }}
+          </button>
+        </h2>
+        <div id="faqCollapse{{ forloop.counter }}" 
+             class="accordion-collapse collapse" 
+             aria-labelledby="faqHeading{{ forloop.counter }}" 
+             data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% else %}
+<div class="container py-4">
+  <div class="alert text-white gradient text-center m-0">
+    No FAQs for now. Come back later!
+  </div>
+</div>
+{% endif %}
 {% endblock %}

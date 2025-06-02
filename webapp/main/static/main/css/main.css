@@ -215,3 +215,8 @@ body, html {
   background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
   z-index: 1;
 }
+
+.accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+}

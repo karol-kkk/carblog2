@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.views.generic import DetailView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
-from .models import Posts, Comment, PostImage
+from .models import Posts, Comment, PostImage, Faq
 from .forms import PostsForm, CommentForm, PostImageFormSet
 from django.http import HttpResponseForbidden
 
@@ -11,7 +11,8 @@ def index(request):
     return render(request,'forum/index.html') 
 
 def frequent_questions(request):
-    return render(request,'forum/frequent_questions.html') 
+    faqs = Faq.objects.all
+    return render(request, "forum/frequent_questions.html", {'faqs': faqs})
 
 
 def post_home(request):
