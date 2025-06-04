@@ -5,7 +5,7 @@ from .forms import RegisterForm, AvatarForm
 from django.contrib.auth import login, logout, authenticate
 from news.models import Articles
 from django.urls import reverse_lazy
-from .models import Avatar
+from .models import Avatar, Event, Round
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views import View
@@ -17,7 +17,8 @@ def index(request):
 
 
 def events(request):
-    return render(request, 'main/events.html')
+    events = Event.objects.prefetch_related('rounds').all()
+    return render(request, 'main/events.html', {'events': events})
 
 def about(request):
     return render(request, 'main/about.html')

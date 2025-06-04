@@ -16,7 +16,7 @@
           <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown">News</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/news">Articles</a></li>
-            {% if user.is_authenticated %}
+            {% if user.is_superuser %}
             <li><a class="dropdown-item" href="/news/create">Add article</a></li>
             {% endif %}
           </ul>
