@@ -22,7 +22,7 @@ class Articles(models.Model):
 class ArticleImage(models.Model):
     article = models.ForeignKey(Articles, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='article_images/', blank=True, null=True)
-    description = models.CharField(max_length=555, blank=True)
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return f"Image for Article {self.article.id}"

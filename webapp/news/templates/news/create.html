@@ -50,10 +50,8 @@
             const formCopyTarget = formsetDiv.querySelector('.image-form');
             const newForm = formCopyTarget.cloneNode(true);
     
-            // Update form index in cloned inputs
             newForm.innerHTML = newForm.innerHTML.replace(/images-(\d)-/g, `images-${currentFormCount}-`);
     
-            // Clear values
             newForm.querySelectorAll('input').forEach(input => {
                 if (input.type === 'file' || input.type === 'text') input.value = '';
             });

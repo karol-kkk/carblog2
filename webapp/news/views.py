@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import DetailView, UpdateView, DeleteView
-from django.http import HttpResponseForbidden, HttpResponse, JsonResponse
+from django.http import HttpResponseForbidden, HttpResponse
 from .models import Articles, ArticleImage
 from .forms import ArticlesForm, ArticleImageFormSet
 from django.contrib.auth.decorators import login_required

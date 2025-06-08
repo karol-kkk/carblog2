@@ -27,7 +27,7 @@
   
     <div class="mb-3 d-flex justify-content-center">
       <div class="text-center" style="max-width: 800px;">
-        <p class="lead">{{ article.body }}</p>
+        <p class="lead fs-4">{{ article.body|linebreaksbr }}</p>
       </div>
     </div>
   
@@ -36,7 +36,7 @@
       {% for img in article.images.all %}
       <div class="w-100">
         <img src="{{ img.image.url }}" alt="Post image" class="img-fluid w-100 rounded shadow">
-        <p class="mt-2 text-center text-muted">{{ img.description }}</p>
+        <p class="mt-2 text-center text-muted fs-5">{{ img.description|linebreaksbr }}</p>
       </div>
       {% endfor %}
     </div>

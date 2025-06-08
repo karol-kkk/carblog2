@@ -2,9 +2,8 @@
 
 from django.shortcuts import render, redirect
 from .forms import RegisterForm, AvatarForm
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login
 from news.models import Articles
-from django.urls import reverse_lazy
 from .models import Avatar, Event, Round
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
